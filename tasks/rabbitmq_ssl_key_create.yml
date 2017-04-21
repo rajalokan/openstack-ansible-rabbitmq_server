@@ -25,14 +25,7 @@
 # subject material for certificates or specify a user-provided certificate and
 # key pair.
 - name: Create self-signed ssl cert
-  command: >
-    openssl req -new -nodes -sha256 -x509 -subj
-    "{{ rabbitmq_ssl_self_signed_subject }}"
-    -days 3650
-    -keyout {{ rabbitmq_ssl_key }}
-    -out {{ rabbitmq_ssl_cert }}
-    -extensions v3_ca
-    creates={{ rabbitmq_ssl_cert }}
+  command: "openssl req -new -nodes -sha256 -x509 -subj {{ rabbitmq_ssl_self_signed_subject }} -days 3650 -keyout {{ rabbitmq_ssl_key }} -out {{ rabbitmq_ssl_cert }} -extensions v3_ca creates={{ rabbitmq_ssl_cert }}"
   tags:
     - rabbitmq-ssl
 

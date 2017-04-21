@@ -30,11 +30,11 @@
 #
 #   playbooks/roles/rabbitmq_server/defaults/main.yml
 #
-- include: rabbitmq_ssl_self_signed.yml
-  when: >
-    rabbitmq_user_ssl_cert is not defined or
-    rabbitmq_user_ssl_key is not defined
-- include: rabbitmq_ssl_user_provided.yml
+# - include: rabbitmq_ssl_self_signed.yml
+#   when: >
+#     rabbitmq_user_ssl_cert is not defined or
+#     rabbitmq_user_ssl_key is not defined
+# - include: rabbitmq_ssl_user_provided.yml
 
 - include: rabbitmq_set_cookie.yml
 - include: rabbitmq_post_install.yml
